@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://dff5fgubiha42"]
+
+[ext_resource type="Script" uid="uid://rxl8rysiawrs" path="res://scripts/Player.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://cphqnut37oxti" path="res://Sprites/Mesa (1X) 2.0.png" id="1_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://crutuixv6pq02" path="res://Ping_Pong_Paddle_Pin.PNG.webp" id="2_0e48y"]
+[ext_resource type="Texture2D" uid="uid://nnij3rdpqjqt" path="res://Sprites/Ball (2X).png" id="2_rj586"]
+[ext_resource type="Script" uid="uid://dm1ohay27gbjv" path="res://scripts/Ball.gd" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://cdkax6w2knvof" path="res://Sprites/Raquete2X.png" id="4_d21ai"]
+[ext_resource type="Texture2D" uid="uid://fbh1lcucyvtr" path="res://Sprites/Raquete 2.0 (2X).png" id="4_rj586"]
+[ext_resource type="Texture2D" uid="uid://b3dpkqo2ropi0" path="res://Sprites/5e404522a43e394ef18f1bb6ab8f21a3b748e5dd.png" id="5_q6r6c"]
+[ext_resource type="Script" uid="uid://xp4cravabr0j" path="res://Colisão_lado.gd" id="6_kdubu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hol4"]
+radius = 13.152946
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q6r6c"]
+radius = 7.333336
+height = 64.000015
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(36.000015, 69.33335)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kdubu"]
+radius = 7.3333054
+height = 64.000015
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(640, 32)
+
+[node name="Node2D" type="Node2D" unique_id=2047945353]
+position = Vector2(352, 216)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1471134098]
+position = Vector2(-32, -38)
+texture = ExtResource("1_4d7sh")
+
+[node name="Ball" type="Node2D" parent="." unique_id=693426021]
+position = Vector2(-176, -8)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ball" unique_id=996557950]
+script = ExtResource("3_epypp")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball/StaticBody2D" unique_id=1029040839]
+position = Vector2(0, 3.8146973e-06)
+scale = Vector2(0.27234638, 0.27234632)
+texture = ExtResource("2_rj586")
+
+[node name="Area2D" type="Area2D" parent="Ball/StaticBody2D" unique_id=31609728]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/StaticBody2D/Area2D" unique_id=463613372]
+shape = SubResource("CircleShape2D_0hol4")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1652189508]
+position = Vector2(-240, 72)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_0e48y")
+
+[node name="Raquete 2" type="Sprite2D" parent="Player" unique_id=1758762190]
+modulate = Color(1, 1, 1, 0.8627451)
+position = Vector2(0.6666667, -53.999996)
+texture = ExtResource("4_rj586")
+
+[node name="Raquete 1" type="Sprite2D" parent="Player" unique_id=1453258651]
+visible = false
+modulate = Color(1, 1, 1, 0.8627451)
+position = Vector2(0, -53.33333)
+texture = ExtResource("4_d21ai")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=194566224]
+visible = false
+modulate = Color(1, 1, 1, 0.8627451)
+position = Vector2(-6.999984, -91)
+rotation = 0.54105204
+scale = Vector2(0.113072395, 0.113072395)
+texture = ExtResource("2_0e48y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player" unique_id=925988227]
+visible = false
+position = Vector2(1.9073486e-06, -160)
+rotation = -1.5707964
+scale = Vector2(0.77253675, 0.9543549)
+texture = ExtResource("5_q6r6c")
+
+[node name="Direita" type="Area2D" parent="Player" unique_id=1626147896]
+position = Vector2(26.66667, -74.66667)
+script = ExtResource("6_kdubu")
+lado = "Direita"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Direita" unique_id=211023086]
+position = Vector2(-1.9073486e-06, 0)
+shape = SubResource("CapsuleShape2D_q6r6c")
+
+[node name="Meio" type="Area2D" parent="Player" unique_id=383082051]
+position = Vector2(1.5258789e-05, -72.66664)
+script = ExtResource("6_kdubu")
+lado = "Meio"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Meio" unique_id=628785241]
+position = Vector2(0, 5.722046e-06)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Esquerda" type="Area2D" parent="Player" unique_id=899668579]
+position = Vector2(-26.666668, -74.66667)
+script = ExtResource("6_kdubu")
+lado = "Esquerda"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Esquerda" unique_id=99686631]
+position = Vector2(3.0517578e-05, 0)
+shape = SubResource("CapsuleShape2D_kdubu")
+
+[node name="Barreiras" type="StaticBody2D" parent="." unique_id=551961456]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barreiras" unique_id=1584816724]
+position = Vector2(-32, -232)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Barreiras" unique_id=29637331]
+position = Vector2(-32, 157)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[connection signal="area_entered" from="Ball/StaticBody2D/Area2D" to="Player" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Ball/StaticBody2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="Player/Direita" to="Player" method="_on_direita_area_entered"]
+[connection signal="area_entered" from="Player/Meio" to="Player" method="_on_meio_area_entered"]
+[connection signal="area_entered" from="Player/Esquerda" to="Player" method="_on_esquerda_area_entered"]
