@@ -1,0 +1,442 @@
+[gd_scene format=3 uid="uid://dff5fgubiha42"]
+
+[ext_resource type="Texture2D" uid="uid://c0v5mm0acw27x" path="res://Sprites/bgd_038out.png" id="1_ifp7j"]
+[ext_resource type="Script" uid="uid://opd0ly3r5078" path="res://Scenes/Pause.gd" id="1_ugmom"]
+[ext_resource type="Texture2D" uid="uid://c8ks1l6088hq2" path="res://Sprites/Mesa (1X) 2.0.png" id="2_ugmom"]
+[ext_resource type="Script" uid="uid://cejshubpc10by" path="res://scripts/player_2.gd" id="3_326g6"]
+[ext_resource type="Texture2D" uid="uid://bu6iqq2d8ir12" path="res://Sprites/Monokuma_Placeholder (3X).png" id="4_35ebf"]
+[ext_resource type="Texture2D" uid="uid://bxq1h3yml3one" path="res://Sprites/Mesa (1X) sem Rede.png" id="5_vigs0"]
+[ext_resource type="Texture2D" uid="uid://83dnufjljsdd" path="res://Sprites/Rede (1X).png" id="6_g20n1"]
+[ext_resource type="Script" uid="uid://dm1ohay27gbjv" path="res://scripts/Ball.gd" id="7_2sl0y"]
+[ext_resource type="Texture2D" uid="uid://ddxesugwx742e" path="res://Sprites/Ball (2X).png" id="8_eoytd"]
+[ext_resource type="Script" uid="uid://rxl8rysiawrs" path="res://scripts/Player.gd" id="9_m61n7"]
+[ext_resource type="Texture2D" uid="uid://cav83u0gnxi1n" path="res://Sprites/Raquete 3.0 (2X).png" id="10_841mj"]
+[ext_resource type="Texture2D" uid="uid://cejt48x8ew3f" path="res://Sprites/Raquete2X.png" id="11_b3k5e"]
+[ext_resource type="FontFile" uid="uid://ckfbgixp1ij0l" path="res://fonts/Peaberry Base/PeaberryBase.ttf" id="12_t1oaa"]
+[ext_resource type="Script" uid="uid://b7u18fw50ukkl" path="res://scripts/label.gd" id="13_iuesb"]
+[ext_resource type="Script" uid="uid://v3nfco4cdqy3" path="res://scripts/side_score.gd" id="14_otloi"]
+[ext_resource type="Texture2D" uid="uid://b0p7fb46g6mo2" path="res://Sprites/Monokuma com o Wii Remote (3x).png" id="15_6ux4i"]
+[ext_resource type="FontFile" uid="uid://buuw501wgchid" path="res://fonts/Peaberry Base/Peaberry-Base.otf" id="16_jm8kv"]
+[ext_resource type="Texture2D" uid="uid://c4eqpg0h8htph" path="res://Sprites/PC _ Computer - The Sims 3 - Miscellaneous - Loading Icon (Unused).png" id="17_gmbc0"]
+[ext_resource type="Texture2D" uid="uid://d8866wlg6sh6" path="res://Sprites/Pause.png" id="19_326g6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0h7mo"]
+radius = 23.0
+height = 52.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hol4"]
+radius = 13.152946
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0h7mo"]
+radius = 12.936269
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ta5nu"]
+radius = 12.876972
+
+[sub_resource type="GDScript" id="GDScript_ir8iy"]
+script/source = "extends Area2D
+@export var lado = \"\"
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q6r6c"]
+radius = 7.333336
+height = 64.000015
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(36.000015, 69.33335)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kdubu"]
+radius = 7.3333054
+height = 64.000015
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2bti"]
+radius = 8.0
+height = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flf07"]
+size = Vector2(14, 304)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(640, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2bti"]
+size = Vector2(32.75, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta5nu"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(0, 0, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flf07"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(181, 0, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k73cj"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(362, 0, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjqkl"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(543, 0, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs4d3"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(724, 0, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vxoj"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(0, 181, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei405"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(181, 181, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8dv2"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(362, 181, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nhjh"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(543, 181, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjha6"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(724, 181, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt76g"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(0, 362, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fr6y"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(181, 362, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hxjc"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(362, 362, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebxd8"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(543, 362, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u7jv"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(724, 362, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24dk6"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(0, 543, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mryly"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(181, 543, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq1c5"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(362, 543, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ornx7"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(543, 543, 181, 181)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnnru"]
+atlas = ExtResource("17_gmbc0")
+region = Rect2(724, 543, 181, 181)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_540hr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flf07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k73cj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjqkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs4d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vxoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei405")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8dv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nhjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjha6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt76g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fr6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hxjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebxd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u7jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24dk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mryly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq1c5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ornx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnnru")
+}],
+"loop": true,
+"name": &"default",
+"speed": 32.0
+}]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ugmom"]
+
+[node name="Node2D" type="Node2D" unique_id=2047945353]
+process_mode = 3
+position = Vector2(352, 216)
+script = ExtResource("1_ugmom")
+
+[node name="Can Pause" type="Node2D" parent="." unique_id=1726838598]
+process_mode = 1
+
+[node name="Texturas do Fundo" type="Node2D" parent="Can Pause" unique_id=1168821037]
+position = Vector2(-32, -88)
+
+[node name="Background" type="Sprite2D" parent="Can Pause/Texturas do Fundo" unique_id=1441469396]
+position = Vector2(0, 52)
+scale = Vector2(0.6666667, 0.66176474)
+texture = ExtResource("1_ifp7j")
+
+[node name="Mesa Elevada" type="Sprite2D" parent="Can Pause/Texturas do Fundo" unique_id=1471134098]
+visible = false
+texture = ExtResource("2_ugmom")
+
+[node name="Player 2" type="StaticBody2D" parent="Can Pause" unique_id=236364272]
+position = Vector2(-32, -112)
+script = ExtResource("3_326g6")
+metadata/_edit_group_ = true
+
+[node name="Player2 (Placeholder)" type="Sprite2D" parent="Can Pause/Player 2" unique_id=1754498598]
+position = Vector2(54, 9)
+texture = ExtResource("4_35ebf")
+region_rect = Rect2(0, 0, 274, 82)
+
+[node name="Area2D" type="Area2D" parent="Can Pause/Player 2" unique_id=1647100927 groups=["player2"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Can Pause/Player 2/Area2D" unique_id=1718317330]
+shape = SubResource("CapsuleShape2D_0h7mo")
+
+[node name="Rede e Fundo" type="Node2D" parent="Can Pause" unique_id=436438592]
+
+[node name="Mesa sem Rede" type="Sprite2D" parent="Can Pause/Rede e Fundo" unique_id=1245712207]
+position = Vector2(-32, -36)
+texture = ExtResource("5_vigs0")
+metadata/_edit_lock_ = true
+
+[node name="Rede" type="Sprite2D" parent="Can Pause/Rede e Fundo" unique_id=572741076]
+light_mask = 512
+visibility_layer = 2
+position = Vector2(-30.00003, 4.9999695)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("6_g20n1")
+
+[node name="Ball" type="Node2D" parent="Can Pause" unique_id=693426021 groups=["ball"]]
+position = Vector2(-32, 58)
+scale = Vector2(1.4, 1.4)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Can Pause/Ball" unique_id=996557950 groups=["ball"]]
+script = ExtResource("7_2sl0y")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Can Pause/Ball/StaticBody2D" unique_id=1029040839]
+position = Vector2(0, 3.8146973e-06)
+scale = Vector2(0.27234638, 0.27234632)
+texture = ExtResource("8_eoytd")
+
+[node name="Colisão Player 1" type="Area2D" parent="Can Pause/Ball/StaticBody2D" unique_id=31609728 groups=["player1"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Can Pause/Ball/StaticBody2D/Colisão Player 1" unique_id=463613372]
+shape = SubResource("CircleShape2D_0hol4")
+
+[node name="Colisão Player 2" type="Area2D" parent="Can Pause/Ball/StaticBody2D" unique_id=1440098851 groups=["player2"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Can Pause/Ball/StaticBody2D/Colisão Player 2" unique_id=2023938154]
+shape = SubResource("CircleShape2D_0h7mo")
+debug_color = Color(0.98857003, 0, 0.30572385, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="Can Pause/Ball/StaticBody2D" unique_id=571859890 groups=["ball"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Can Pause/Ball/StaticBody2D/Area2D" unique_id=1611003132]
+shape = SubResource("CircleShape2D_ta5nu")
+debug_color = Color(0.14509805, 1, 0.21960784, 0.41960785)
+
+[node name="Player" type="CharacterBody2D" parent="Can Pause" unique_id=1652189508]
+position = Vector2(-180, 133)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("9_m61n7")
+metadata/_edit_group_ = true
+
+[node name="Raquete 2" type="Sprite2D" parent="Can Pause/Player" unique_id=1758762190]
+self_modulate = Color(1, 1, 1, 0.8784314)
+position = Vector2(2.5629997e-06, -54)
+texture = ExtResource("10_841mj")
+
+[node name="Raquete 1" type="Sprite2D" parent="Can Pause/Player" unique_id=1453258651]
+visible = false
+modulate = Color(1, 1, 1, 0.8627451)
+position = Vector2(0, -53.33333)
+texture = ExtResource("11_b3k5e")
+
+[node name="Direita" type="Area2D" parent="Can Pause/Player" unique_id=1626147896 groups=["player1"]]
+position = Vector2(26.66667, -74.66667)
+script = SubResource("GDScript_ir8iy")
+lado = "Direita"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Can Pause/Player/Direita" unique_id=211023086]
+position = Vector2(-1.9073486e-06, 0)
+shape = SubResource("CapsuleShape2D_q6r6c")
+
+[node name="Meio" type="Area2D" parent="Can Pause/Player" unique_id=383082051 groups=["player1"]]
+position = Vector2(1.5258789e-05, -72.66664)
+script = SubResource("GDScript_ir8iy")
+lado = "Meio"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Can Pause/Player/Meio" unique_id=628785241]
+position = Vector2(0, 5.722046e-06)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Esquerda" type="Area2D" parent="Can Pause/Player" unique_id=899668579 groups=["player1"]]
+position = Vector2(-26.666668, -74.66667)
+script = SubResource("GDScript_ir8iy")
+lado = "Esquerda"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Can Pause/Player/Esquerda" unique_id=99686631]
+position = Vector2(3.0517578e-05, 0)
+shape = SubResource("CapsuleShape2D_kdubu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Can Pause/Player" unique_id=2109480890]
+position = Vector2(0, -5.3333282)
+shape = SubResource("CapsuleShape2D_d2bti")
+
+[node name="Label_Score" type="Label" parent="Can Pause" unique_id=770798926]
+offset_left = -336.0
+offset_top = -208.0
+offset_right = -264.0
+offset_bottom = -163.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("12_t1oaa")
+theme_override_font_sizes/font_size = 32
+text = "0 : 0"
+script = ExtResource("13_iuesb")
+
+[node name="Side Score" type="Area2D" parent="Can Pause" unique_id=583289586]
+visible = false
+script = ExtResource("14_otloi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Can Pause/Side Score" unique_id=968266532]
+position = Vector2(248, -24)
+shape = SubResource("RectangleShape2D_flf07")
+debug_color = Color(0.84111965, 0.11742575, 0.12675196, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Can Pause/Side Score" unique_id=1448436273]
+position = Vector2(-312, -24)
+shape = SubResource("RectangleShape2D_flf07")
+debug_color = Color(0.84111965, 0.11742575, 0.12675196, 0.41960785)
+
+[node name="Barreiras" type="StaticBody2D" parent="Can Pause/Side Score" unique_id=551961456]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Can Pause/Side Score/Barreiras" unique_id=1584816724]
+position = Vector2(-32, -232)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Can Pause/Side Score/Barreiras" unique_id=29637331]
+position = Vector2(-32, 200)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Can Pause/Side Score/Barreiras" unique_id=723458732]
+position = Vector2(303.25, -16)
+shape = SubResource("RectangleShape2D_d2bti")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Can Pause/Side Score/Barreiras" unique_id=384648534]
+position = Vector2(-368.375, -16)
+shape = SubResource("RectangleShape2D_d2bti")
+
+[node name="Loading" type="Node2D" parent="Can Pause" unique_id=1846665569]
+visible = false
+
+[node name="Background" type="Sprite2D" parent="Can Pause/Loading" unique_id=2124544792]
+position = Vector2(-31.5, -36)
+scale = Vector2(0.66562504, 0.66176474)
+texture = ExtResource("1_ifp7j")
+
+[node name="Sprite2D" type="Sprite2D" parent="Can Pause/Loading" unique_id=3321445]
+position = Vector2(131, 55)
+texture = ExtResource("15_6ux4i")
+
+[node name="Label" type="Label" parent="Can Pause/Loading" unique_id=2097941294]
+offset_left = -278.0
+offset_top = -133.0
+offset_right = 220.0
+offset_bottom = -85.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("16_jm8kv")
+theme_override_font_sizes/font_size = 48
+text = "Aguarde a Conexão!"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Can Pause/Loading" unique_id=655709991]
+position = Vector2(248, 104)
+scale = Vector2(0.4116022, 0.4116022)
+sprite_frames = SubResource("SpriteFrames_540hr")
+autoplay = "default"
+frame_progress = 0.157675
+
+[node name="Pause Menu" type="Node2D" parent="." unique_id=1469272375]
+process_mode = 2
+visible = false
+position = Vector2(-90, -88)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pause Menu" unique_id=1516259996]
+self_modulate = Color(0, 0, 0, 0.5254902)
+position = Vector2(57.999992, 50.66668)
+scale = Vector2(639.99994, 357.33337)
+texture = SubResource("CanvasTexture_ugmom")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Pause Menu" unique_id=1513328249]
+position = Vector2(58, 64)
+texture = ExtResource("19_326g6")
+
+[connection signal="area_entered" from="Can Pause/Player 2/Area2D" to="Can Pause/Player 2" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Can Pause/Ball/StaticBody2D/Colisão Player 1" to="Can Pause/Player" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Can Pause/Ball/StaticBody2D/Colisão Player 1" to="Can Pause/Player" method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="Can Pause/Player/Direita" to="Can Pause/Player" method="_on_direita_area_entered"]
+[connection signal="area_entered" from="Can Pause/Player/Meio" to="Can Pause/Player" method="_on_meio_area_entered"]
+[connection signal="area_entered" from="Can Pause/Player/Esquerda" to="Can Pause/Player" method="_on_esquerda_area_entered"]
+[connection signal="area_entered" from="Can Pause/Side Score" to="Can Pause/Side Score" method="_on_area_entered"]
